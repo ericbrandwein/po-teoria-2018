@@ -1,0 +1,136 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+% \usepackage{comment}
+
+\usetheme{Frankfurt}
+
+%Information to be included in the title page:
+\title{Prueba de Oposición}
+\subtitle{Área Teoría}
+\institute{Universidad de Buenos Aries, FCEyN}
+\author{Eric Brandwein}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Marco del Ejercicio}
+\begin{frame}
+\frametitle{Marco del Ejercicio}
+
+Materia: Paradigmas de Lenguajes de Programación
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Marco del Ejercicio}
+Guías prácticas:
+\begin{itemize}
+    \item 0: Repaso de programación funcional
+    \item 1: Programación funcional
+    \item 2: Cálculo Lambda Tipado
+    \item \textbf{3: Inferencia de Tipos}
+    \item 4: Subtipado
+    \item 5: Programación orientada a objetos
+    \item 6: Programación lógica
+    \item 7: Resolución en lógica
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Marco del Ejercicio}
+
+\begin{itemize}
+    \item Los alumnos deben conocer los \textbf{términos}
+        y el sistema de \textbf{juicios de tipado}
+        de $\lambda^{bn}$.
+    \item El ejercicio puede ser dado:
+    \begin{itemize}
+        \item en la clase en la que se está enseñando
+            $Erase()$ por \textbf{primera vez}.
+            % Por ser un ejercicio simple
+        \item como uno de los \textbf{primeros ejercicios} de
+            la práctica 3.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Objetivos del ejercicio}
+\begin{frame}
+\frametitle{Objetivos del ejercicio}
+\begin{itemize}
+    \item Entender el \textbf{funcionamiento} del $Erase()$.
+    \item Repasar qué son las \textbf{anotaciones de tipo},
+        y cuándo y cómo afectan al tipo del término.
+    \item Hacer notar que \textbf{no es suficiente} el
+        $Erase()$ de un término para determinar su tipo.
+\end{itemize}
+\end{frame}
+
+
+\section{Por qué este ejercicio?}
+\begin{frame}
+\frametitle{Por qué este ejercicio?}
+\begin{itemize}
+    \item Es un ejercicio \textbf{simple},
+        de fácil entendimiento.
+    \item Tiene potencial de \textbf{participación}
+        de parte de los alumnos.
+\end{itemize}
+
+\end{frame}
+
+\section{Enunciado}
+\begin{frame}
+\frametitle{Enunciado}
+Mostrar, si es posible, dos términos
+$M_1 \neq M_2 \in \lambda^{bn}$ tal que
+$\emptyset \triangleright M_1 : \sigma$,
+$\emptyset \triangleright M_2 : \sigma'$,
+y $Erase(M_1) = Erase(M_2)$.
+\end{frame}
+
+\begin{frame}
+\frametitle{A tener en cuenta}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+$M, P, Q ::= true$
+
+\qquad\qquad$\ \ |\ false$
+
+\qquad\qquad$\ \ |\ if\ M\ then\ P\ else\ Q$
+
+\qquad\qquad$\ \ |\ M\ N$
+
+\qquad\qquad$\ \ |\ \lambda x : \sigma.M$
+
+\qquad\qquad$\ \ |\ x$
+
+\qquad\qquad$\ \ |\ 0$
+
+\qquad\qquad$\ \ |\ succ(M)$
+
+\qquad\qquad$\ \ |\ pred(M)$
+
+\qquad\qquad$\ \ |\ iszero(M)$
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\only<2->{
+    $\sigma,\tau ::= Bool$
+
+    \qquad\quad$|\ Nat$
+
+    \qquad\quad$|\ \sigma \rightarrow \tau$
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+\end{document}

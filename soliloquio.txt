@@ -1,0 +1,67 @@
+1.
+Revisemos qué hacía el Erase. El Erase borraba anotaciones de tipo. ¿Qué quiere
+decir esto? Quiere decir que si tenemos un término como (\lambda x:Bool.x), su
+Erase es (\x.x).
+
+En el enunciado vemos que nos piden dos términos que tengan tipos diferentes, pero que su
+Erase sea igual. De alguna manera, queremos entonces que los tipos de M1 y M2 estén determinados por cosas que
+son borradas por el Erase. Veamos qué tipos de términos nos pueden servir para esto.
+
+Los términos de \lambda^{bn}, si nos acordamos, eran estos:
+# Mostrar términos en las diapos?
+M, P, Q ::= true
+		|	false
+		|	if M then P else Q
+		|	M N
+		|	\lambda x : \sigma.M
+		|	x
+		|	0
+		|	succ(M)
+		|	pred(M)
+		|	iszero(M)
+
+Cuáles de todos estos tienen cosas que el Erase saca?
+Bueno, el Erase saca solo anotaciones de tipo, y la única anotación
+de tipo que veo yo acá es en el lambda, no? A ver, probemos entonces
+escribir dos lambdas de diferente tipo cuyo Erase sea igual.
+Imaginemos que M1 es
+
+<pizarron>
+M1 = \x:Bool.x
+</pizarron>
+
+Qué tipo tiene esto?
+
+<pizarron>
+\vacio |> M1 : Bool -> Bool
+</pizarron>
+
+Ahora, el M2 tiene que ser igual sin los tipos, pero diferente con.
+Le podemos directamente cambiar el Bool al M1 por otro tipo, no?
+Por ejemplo, probemos con Nat
+
+<pizarron>
+M2 = \x:Nat.x
+</pizarron>
+
+el M2 tiene tipo
+
+<pizarron>
+\vacio |> M2 : Nat -> Nat
+</pizarron>
+
+Bien, tienen tipos diferentes, así que son candidatos.
+Y cual es su Erase? Es el mismo término sin las anotaciones de tipo.
+
+<pizarron>
+Erase(M1) = \x.x
+</pizarron>
+
+Y el Erase de M2 es
+
+<pizarron>
+Erase(M2) = \x.x
+</pizarron>
+
+Ah, pero entonces son iguales! Entonces encontramos dos términos
+con tipos diferentes cuyos Erase son iguales, y resolvimos el problema.
