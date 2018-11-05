@@ -95,42 +95,27 @@ y $Erase(M_1) = Erase(M_2)$.
 \end{frame}
 
 \begin{frame}
-\frametitle{A tener en cuenta}
+\frametitle{Términos de $\lambda^{bn}$}
 
-\begin{columns}
+\qquad\qquad\qquad\qquad$M, P, Q ::= true$
 
-\begin{column}{0.5\textwidth}
-$M, P, Q ::= true$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ false$
 
-\qquad\qquad$\ \ |\ false$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ if\ M\ then\ P\ else\ Q$
 
-\qquad\qquad$\ \ |\ if\ M\ then\ P\ else\ Q$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ M\ N$
 
-\qquad\qquad$\ \ |\ M\ N$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ \lambda x : \sigma.M$
 
-\qquad\qquad$\ \ |\ \lambda x : \sigma.M$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ x$
 
-\qquad\qquad$\ \ |\ x$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ 0$
 
-\qquad\qquad$\ \ |\ 0$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ succ(M)$
 
-\qquad\qquad$\ \ |\ succ(M)$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ pred(M)$
 
-\qquad\qquad$\ \ |\ pred(M)$
+\qquad\qquad\qquad\qquad\qquad\qquad$\ \ |\ iszero(M)$
 
-\qquad\qquad$\ \ |\ iszero(M)$
-\end{column}
-
-\begin{column}{0.5\textwidth}
-\only<2->{
-    $\sigma,\tau ::= Bool$
-
-    \qquad\quad$|\ Nat$
-
-    \qquad\quad$|\ \sigma \rightarrow \tau$
-}
-\end{column}
-
-\end{columns}
 \end{frame}
 \end{document}
